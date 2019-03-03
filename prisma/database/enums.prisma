@@ -1,9 +1,3 @@
-interface Base {
-  id: ID! @unique
-  # createAt: DateTime!
-  # updateAt: DateTime!
-}
-
 enum Permission {
   ADMIN
   USER

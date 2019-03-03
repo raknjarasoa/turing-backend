@@ -1,6 +1,9 @@
 ## DB Models
 
-type User implements Base {
+type User {
+  id: ID! @unique
+  # createAt: DateTime!
+  # updateAt: DateTime!
   name: String!
   email: String! @unique
   # password: String!
@@ -10,7 +13,10 @@ type User implements Base {
   # cart: [CartItem!]!
 }
 
-type Product implements Base {
+type Product {
+  id: ID! @unique
+  # createAt: DateTime!
+  # updateAt: DateTime!
   name: String!
   description: String!
   price: Float!

@@ -32,6 +32,7 @@
     "codecov": "codecov -f coverage/*.json",
     "lint": "eslint src/**.ts",
     "format": "prettier './{src,__test__,}/**/*.{js,ts,json,md,graphql}' --write",
+    "reset:db": "npx prisma reset",
     "deploy": "rm -rf src/generated-prisma-client && npx prisma deploy && yarn format"
   },
   "dependencies": {
