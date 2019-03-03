@@ -1,0 +1,21 @@
+# endpoint: http://localhost:4466 # docker dev
+endpoint: ${env:PRISMA_ENDPOINT}
+secret: ${env:PRISMA_SECRET}
+
+datamodel:
+  - database/types.prisma
+  - database/enums.prisma
+
+# seed:
+#   import: poulate.graphql
+
+generate:
+  - generator: typescript-client
+    output: ../src/generated-prisma-client/
+  - generator: graphql-schema
+    output: ../src/generated-prisma-client/
+
+hooks:
+  post-deploy:
+    - echo "Deployment done!"
+    - prisma generate

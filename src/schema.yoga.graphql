@@ -1,0 +1,16 @@
+# import * from "./generated-prisma-client/prisma.graphql"
+## Server Models
+
+type SuccessMessage {
+  message: String
+}
+
+type Query {
+  users: [User!]!
+  products: [Product!]!
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User!
+  createProduct(name: String!, description: String!, price: String!): Product!
+}

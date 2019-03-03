@@ -1,0 +1,69 @@
+interface Base {
+  id: ID! @unique
+  # createAt: DateTime!
+  # updateAt: DateTime!
+}
+
+enum Permission {
+  ADMIN
+  USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMDELETE
+  PERMISSIONUPDATE
+}
+
+# enum CURRENCY {
+#   CAD
+#   CHF
+#   EUR
+#   JPY
+#   USD
+#   ZAR
+# }
+
+# enum PAYMENT_PROVIDER {
+#   PAYPAL
+#   CREDIT_CARD
+# }
+
+# type Payment {
+#   id: ID! @unique
+#   createdAt: DateTime!
+#   serviceFee: Float!
+#   placePrice: Float!
+#   totalPrice: Float!
+#   booking: Booking!
+#   paymentMethod: PaymentAccount!
+# }
+
+# type PaymentAccount {
+#   id: ID! @unique
+#   createdAt: DateTime!
+#   type: PAYMENT_PROVIDER
+#   user: User!
+#   payments: [Payment!]!
+#   paypal: PaypalInformation
+#   creditcard: CreditCardInformation
+# }
+
+# type PaypalInformation {
+#   id: ID! @unique
+#   createdAt: DateTime!
+#   email: String!
+#   paymentAccount: PaymentAccount!
+# }
+
+# type CreditCardInformation {
+#   id: ID! @unique
+#   createdAt: DateTime!
+#   cardNumber: String!
+#   expiresOnMonth: Int!
+#   expiresOnYear: Int!
+#   securityCode: String!
+#   firstName: String!
+#   lastName: String!
+#   postalCode: String!
+#   country: String!
+#   paymentAccount: PaymentAccount
+# }

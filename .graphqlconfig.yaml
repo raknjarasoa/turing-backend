@@ -1,0 +1,11 @@
+projects:
+  app:
+    schemaPath: src/schema.yoga.graphql
+    extensions:
+      endpoints:
+        default: http://localhost:4466
+
+  prisma:
+    schemaPath: src/generated-prisma-client/prisma.graphql
+    extensions:
+      prisma: prisma/prisma.yml
