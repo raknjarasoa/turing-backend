@@ -17,7 +17,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "start": "yarn build && node dist/index.js",
+    "start": "node dist/index.js",
     "dev": "npm-run-all --parallel tsc:w debug",
     "debug": "nodemon -e js,ts,graphql -x babel-node --inspect dist/index.js",
     "play": "npm-run-all --parallel debug playground",
@@ -30,7 +30,7 @@
     "test:ci": "jest --runInBand --env=node",
     "test:cov": "jest --coverage --env=node",
     "codecov": "codecov -f coverage/*.json",
-    "lint": "eslint src/**.*",
+    "lint": "eslint src/**.ts",
     "format": "prettier './{src,__test__,}/**/*.{js,ts,json,md,graphql}' --write",
     "deploy": "rm -rf src/generated-prisma-client && npx prisma deploy && yarn format"
   },
@@ -49,6 +49,7 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
     "@types/bcryptjs": "^2.4.2",
