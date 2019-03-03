@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "target": "es5",
+    "sourceMap": true,
+    "strict": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "types": ["jest", "node"]
+}
