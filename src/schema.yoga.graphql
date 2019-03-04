@@ -6,11 +6,18 @@ type SuccessMessage {
 }
 
 type Query {
+  user(where: UserWhereUniqueInput!): User
   users: [User!]!
+  product(where: ProductWhereUniqueInput!): Product
   products: [Product!]!
 }
 
 type Mutation {
   createUser(data: UserCreateInput!): User!
   createProduct(data: ProductCreateInput!): Product!
+  updateProduct(
+    data: ProductUpdateInput!
+    where: ProductWhereUniqueInput!
+  ): Product
+  deleteProduct(where: ProductWhereUniqueInput!): Product
 }

@@ -1,6 +1,8 @@
-import { createUser, createProduct } from './mutation';
-
-export default {
+import {
   createUser,
-  createProduct
-};
+  createProduct,
+  deleteProduct,
+  updateProduct
+} from './mutation';
+
+export default { createUser, createProduct, deleteProduct, updateProduct };

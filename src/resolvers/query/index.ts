@@ -1,9 +1,30 @@
-import { IContext } from '../../utils';
 import {
-  User,
   FragmentableArray,
-  Product
+  Product,
+  ProductPromise,
+  ProductWhereUniqueInput,
+  User,
+  UserWhereUniqueInput
 } from '../../generated-prisma-client';
+import { IContext } from '../../utils';
+
+export function products(
+  root: any,
+  args: any,
+  ctx: IContext,
+  info: any
+): FragmentableArray<Product> {
+  return ctx.prisma.products();
+}
+
+export function product(
+  root: any,
+  args: { where: ProductWhereUniqueInput },
+  ctx: IContext,
+  info: any
+): ProductPromise {
+  return ctx.prisma.product(args.where);
+}
 
 export function users(
   root: any,
@@ -14,11 +35,11 @@ export function users(
   return ctx.prisma.users();
 }
 
-export function products(
+export async function user(
   root: any,
-  args: any,
+  args: { where: UserWhereUniqueInput },
   ctx: IContext,
   info: any
-): FragmentableArray<Product> {
-  return ctx.prisma.products();
+): Promise<User> {
+  return await ctx.prisma.user(args.where);
 }

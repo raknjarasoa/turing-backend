@@ -1,6 +1,8 @@
-import { products, users } from './query';
+import { products, users, user, product } from './query';
 
 export default {
-  products,
-  users
+  product,
+  users,
+  user,
+  products
 };
